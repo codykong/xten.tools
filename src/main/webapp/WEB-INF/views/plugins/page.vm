@@ -1,0 +1,67 @@
+#*
+*
+* 使用本分页时，每个页面都要实现以下函数，每当点击页码时会回调此函数
+* function gotoPage(pageIndex,pageSize){ // pageIndex第多少页，pageSize每页要显示多少条
+*
+* }
+* 页面设置属性要用view.addAttribute("page", com.blog.domain.common.Page)
+* *#
+
+<script type="text/javascript" src="#springUrl('')/misc/js/plugins/page.js"></script>
+
+<div class="page">
+
+    <div id="pagingDiv">
+    ##设置紧挨当前页各有多少可点击的页码
+        #set($range= 3 )
+        #set($i = 1 )
+    ##显示上一页
+        #if($i< $page.pageIndex)
+            <a class="pre" href="javascript:void(0);" onclick="pageClick($!page.pageIndex -1)">&lt;上一页</a>
+        #end
+    ##显示第一页开始到当前页的部分
+        #foreach($index in [$range .. 0])
+            #set($i = $page.pageIndex - $index)
+            #if($foreach.first)##第一次循环
+                <a href="javascript:void(0);" onclick="pageClick(1)" #if($page.pageIndex==1) class="current" #end>1</a>
+                #if($i > 2)
+                    <span class="apostrophe">...</span>
+                #end
+            #end
+            #if($i>=2)
+                #if($i==$page.pageIndex)
+                    <a class="current" href="javascript:void(0);">$i</a>
+                #else
+                    <a href="javascript:void(0);" onclick="pageClick($i)">$i</a>
+                #end
+            #end
+        #end
+
+    ##显示当前页以后的部分
+        #if($page.pageIndex <$!page.getTotalPage())
+            #foreach($index in [1 .. $range])
+                #set($i = $page.pageIndex + $index)
+                #if($i <= $!page.getTotalPage())
+                    <a href="javascript:void(0);" onclick="pageClick($i)">$i</a>
+                #else
+                    #break
+                #end
+            #end
+            #if($i<$!page.getTotalPage())
+                #set($i=$i+1)
+                #if($i<$!page.getTotalPage())
+                    <span class="apostrophe">...</span>
+                #end
+                <a href="javascript:void(0);" onclick="pageClick($!page.getTotalPage())">$!page.getTotalPage()</a>
+            #end
+            <a class="next" href="javascript:void(0);" onclick="pageClick($!page.pageIndex+1)">下一页&gt;</a>
+        #end
+
+    #*跳转到页面*#
+        <span class="ml10 fl">
+			<input id="to-page" type="text" class="textC" value="$!page.pageIndex" title="输入页码，按回车快速跳转"/>
+		</span>
+
+    </div>
+</div>
+			

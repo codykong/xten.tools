@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" type="text/css" href="${resourceRoot}/misc/skin/passport.css" />
+<script type="text/javascript" src="${resourceRoot}/misc/js/passport/passport.js"></script>
+ 
+ #set($page_title="用户注册")   .
+  <div id="regist_content"> 
+    <form class="form-horizontal" action="/passport/regist" method="post" name="registQueryForm">
+      <div class="control-group">
+        <label class="control-label" for="inputUser">用户名</label>
+        <div class="controls">
+          <input id="inputUser" name="userName" placeholder="请输入用户名" type="text" >
+          <span class="help-inline">请输入6-20位有效用户名！</span>
+        </div>       
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputPassword">密码</label>
+        <div class="controls">
+          <input class="regist-pwd" name="userPwd" type="password" id="inputPassword" placeholder="请输入登录密码">
+          <span class="help-inline">请输入6-20位有效密码</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputPasswordR">密码</label>
+        <div class="controls">
+          <input class="regist-pwd" type="password" id="inputPasswordR" placeholder="请重复输入登录密码">
+          <span class="help-inline">请重复输入6-20位有效密码</span>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">邮箱</label>
+        <div class="controls">
+          <input id="inputEmail" name="userEmail" placeholder="请输入邮箱" type="text" >
+          <span class="help-inline">请输入6-20位有效邮箱！</span>
+        </div>       
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn" id="regist-btn">注册</button>
+        </div>
+      </div>
+    </form>
+</div>

@@ -1,0 +1,33 @@
+<header class="global-header" id="global-header" role="banner">
+    <div class="wrapper clear">
+        <a href="/" class="logo ir" rel="home"></a>
+        <nav class="nav-primary nav">
+            <ul class="clear">
+                <li class="nav-item-about nav-item"><a href="/index" >首页</a></li>
+                <li class="nav-item-about nav-item"><a href="/about" >分享</a></li>
+                <li class="nav-item-work nav-item"><a href="/work">资料</a></li>
+                <li class="nav-item-blogs nav-item"><a href="/blogs" >问答</a></li>
+
+            </ul>
+        </nav>
+
+        <nav class="nav-primary nav">
+            <ul>
+
+                <li class="nav-item-blogs nav-item"><input type="text" value="搜索"></li>
+
+            </ul>
+        </nav>
+
+        <nav class="nav-secondary nav">
+            <ul class="clear" id="nav-secondary">
+
+                <li class="nav-item"><a href="/contact">联系我们</a></li>
+                <li class="nav-item"><a href="/about#careers">提供意见</a></li>
+
+            </ul>
+        </nav>
+
+    </div>
+
+</header>

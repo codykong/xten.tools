@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<!-- 注解的范围 -->
+	<context:component-scan base-package="com.*" />
+	
+	<bean id="conversionService" 
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+	</bean>
+		
+	<!-- 项目外属性文件 -->
+    <bean id="propertyConfigurer" class="com.xten.common.utils.ExternalPropertyPlaceholderConfigurer">
+    </bean>
+
+
+
+    <bean id="mysqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+		
+	<!-- mysql库配置 -->
+    <bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="${driverClassName}"></property>
+		<property name="url" value="${tools_url}"></property>
+		<property name="username" value="${tools_username}"></property>
+		<property name="password" value="${tools_password}"></property>
+		<!-- 初始化连接:连接池启动时创建的初始化连接数量 -->
+		<property name="initialSize" value="${initialSize}"/>
+		<!-- 最大活动连接:连接池在同一时间能够分配的最大活动连接的数量, 如果设置为非正数则表示不限制 -->
+		<property name="maxActive" value="${maxActive}"></property>
+		<!-- 最大空闲连接:连接池中容许保持空闲状态的最大连接数量,超过的空闲连接将被释放,如果设置为负数表示不限制 -->
+		<property name="maxIdle" value="${maxIdle}"></property>
+		<!-- 最小空闲连接:连接池中容许保持空闲状态的最小连接数量,低于这个数量将创建新的连接,如果设置为0则不创建 -->
+		<property name="minIdle" value="${minIdle}"></property>
+		<!-- 最大等待时间:当没有可用连接时,连接池等待连接被归还的最大时间(以毫秒计数),超过时间则抛出异常,如果设置为-1表示无限等待 -->
+		<property name="maxWait" value="${maxWait}"></property>
+		<!-- 在空闲连接回收器线程运行期间休眠的时间值,以毫秒为单位. 如果设置为非正数,则不运行空闲连接回收器线程 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${timeBetweenEvictionRunsMillis}"></property>
+		<!-- 在每次空闲连接回收器线程(如果有)运行时检查的连接数量 -->
+		<property name="numTestsPerEvictionRun" value="${numTestsPerEvictionRun}"></property>
+		<!-- 连接在池中保持空闲而不被空闲连接回收器线程(如果有)回收的最小时间值，单位毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="${minEvictableIdleTimeMillis}"></property>
+		<!-- 标记是否删除泄露的连接,如果他们超过了removeAbandonedTimout的限制.如果设置为true, 连接被认为是被泄露并且可以被删除,
+		如果空闲时间超过removeAbandonedTimeout. 设置为true可以为写法糟糕的没有关闭连接的程序修复数据库连接. -->
+		<property name="removeAbandoned" value="${removeAbandoned}"></property>
+		<!-- 泄露的连接可以被删除的超时值, 单位秒 -->
+		<property name="removeAbandonedTimeout" value="${removeAbandonedTimeout}"></property>
+		<!-- 指明是否在从池中取出连接前进行检验,如果检验失败,则从池中去除连接并尝试取出另一个.
+			注意: 设置为true后如果要生效,validationQuery参数必须设置为非空字符串 -->
+		<property name="testOnBorrow" value="${testOnBorrow}"></property>
+	    <property name="validationQuery"><value>SELECT 1 FROM DUAL</value></property>
+	</bean>
+
+    <bean id="interfaceDAO" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="com.xten.mybatis.interfaceType.InterfaceDAO" />
+        <property name="sqlSessionFactory" ref="mysqlSessionFactory" />
+    </bean>
+
+    <bean id="interfaceService" class="com.xten.mybatis.interfaceType.InterfaceServiceImpl">
+
+    </bean>
+
+
+	
+</beans>

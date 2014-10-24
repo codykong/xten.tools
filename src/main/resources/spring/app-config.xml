@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        ">
+	
+	<!-- 项目外属性文件  -->
+	<bean id="propertyConfigurer" class="com.blog.common.base.spring.ExternalPropertyPlaceholderConfigurer">
+    	<property name="configPath"  value="/opt/kqy/config/com.xten.blog/config" />
+	</bean>
+
+<!--    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location"  value="classpath:/config/*.properties" />
+    </bean>-->
+	
+	<!-- 静态文件版本号 -->
+	<bean id="rpe" class="com.blog.common.base.spring.ResourcePathExposer" init-method="initVersion">
+		<property name="version" value="${rpe.version}"></property>	
+	</bean>
+	
+
+
+ 
+</beans>

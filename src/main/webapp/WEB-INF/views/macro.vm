@@ -1,0 +1,12 @@
+#**
+ * charge mode desc
+ *
+ * Macro to show desc for some charge mode id.
+ *#
+#macro( showBlogType $id )
+	#if($id == 0)
+	旅行控
+	#elseif($id == 2)
+	应用控
+	#end
+#end

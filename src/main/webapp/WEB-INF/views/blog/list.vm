@@ -1,0 +1,61 @@
+#define($jsblock)
+<script type="text/javascript" src="#springUrl('')/misc/js/passport/blog.js"></script>
+#end
+<div class="container">
+#*    <div class="hot">
+        <div class="city-togo">
+            你想去哪里？
+            <br><br>
+
+            不知道去哪里，随便逛逛
+        </div>
+        <div class="promo-pic">
+            <img src="${resourceRoot}/misc/skin/model.jpg" alt="">
+        </div>
+    </div>*#
+
+    <form action="/blog/list" method="post" id="searchBlog">
+        <input type="hidden" name="channelType" id="channelType-list" value="$!request.getParameter('channelType')"/>
+        <input type="hidden" name="pageSize" id="pageSize" value="$!page.pageSize"/>
+        <input type="hidden" name="pageIndex" id="pageIndex" value="$!paging.pageIndex"/>
+        <input type="hidden" name="usedNum" id="usedNum" value="$!request.getParameter('usedNum')"/>
+    </form>
+    <div class="news-list">
+        #foreach($blog in $previews)
+            <dl class="news">
+                <dd class="news-pic">
+                    <a href=#><img src="${resourceRoot}/misc/skin/pic1.jpg" alt=""></a>
+                </dd>
+                <dd class="news-type">
+                    <a href=#>#showBlogType($!blog.type)</a>
+                    <span>$!blog.publish_time</span>
+                </dd>
+                <dt class="news-title">
+                    <a href=#>$!blog.title</a>
+                </dt>
+                <dd class="news-text">
+
+                    <p>
+                        $!blog.content
+                    </p>
+                </dd>
+            </dl>
+        #end
+
+    </div>
+
+    <div class="news-pre"></div>
+
+
+</div>
+
+<script>
+    function goToPage(pageIndex, pageSize) { // pageIndex第多少页，pageSize每页要显示多少条
+        $("#pageIndex").val(pageIndex);
+        $("#searchBlog").submit();
+    }
+
+</script>
+
+   #parse('plugins/page.vm')
+

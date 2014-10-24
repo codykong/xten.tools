@@ -1,0 +1,108 @@
+
+*{
+	margin: 0 auto;
+}
+
+.clear {
+zoom: 1;
+}
+
+body{
+color: #545454;
+font: normal 16px/1.5 "Calluna Sans","中易宋体";
+}
+
+div {
+display: block;
+}
+
+nav ul, nav ol {
+list-style: none;
+list-style-image: none;
+margin: 0;
+padding: 0;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+ul, menu, dir {
+display: block;
+list-style-type: disc;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+
+.global-header {
+background: #3A9D9A;
+border-bottom: 1px solid #CCC;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+z-index: 100000;
+}
+
+.global-header a {
+color: #EEE;
+font-size: 14px;
+}
+
+.global-header .wrapper {
+margin: 0 auto;
+height: 20px;
+padding: 5px 10px 5px 10px;
+width: 940px;
+}
+
+.global-header .logo {
+background-image: url('http://viget.com//assets/stylesheets/../images/logo-dark-102x36.png?1341933354');
+float: left;
+height: 36px;
+margin: 10px 38px 0 0;
+width: 102px;
+}
+
+.nav {
+margin: 30px auto 5px 0;
+list-style: none;
+}
+
+.global-header .nav-primary {
+float: left;
+}
+
+.global-header .nav a {
+display: inline-block;
+line-height: 36px;
+}
+
+.global-header .nav-primary a {
+padding: 0 20px;
+text-transform: uppercase;
+}
+
+.global-header .nav .nav-item {
+float: left;
+}
+
+.global-header .nav-secondary {
+float: right;
+font-style: italic;
+margin-right: -10px;
+}
+.global-header .nav-secondary {
+font-style: italic;
+}
+
+.global-header .nav-secondary a {
+padding: 0 10px;
+}

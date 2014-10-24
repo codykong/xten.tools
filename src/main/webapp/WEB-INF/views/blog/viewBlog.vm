@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="${resourceRoot}/misc/skin/blog.css" />
+
+<script type="text/javascript" src="${resourceRoot}/misc/js/blog/blog.js"></script>
+
+<input type="hidden" id="blogId" value="$!blog.bId">
+
+
+<div class="container">
+
+    <div class="contain-left">
+        <dl>
+            <dt class="title">
+                $!blog.title
+            </dt>
+            <dd class="ml20">
+                <a href=#>[$!blog.type]</a>
+                <span>$!blog.publishTime</span>
+            </dd>
+
+            <dd class="mt40">
+                $!blog.content
+            </dd>
+
+            <dd>
+                <div class="fr comment-action">
+                    <a href="javascript:void(0)" onclick="support(this,$!blog.bId,1)">赞（$!blog.supportCount）</a>
+                    <a href="javascript:void(0)">阅读（$!blog.viewCount）</a>
+                    <a href="javascript:void(0)" onclick="goToComment(this,$!blog.bId,1)">评论（$!blog.commentCount）</a>
+                </div>
+
+            </dd>
+
+        </dl>
+    </div>
+    <div class="contain-left" id="comments">
+        <br>
+        <p>讨论区：</p>
+    </div>
+
+</div>
+
+<div class="fix top300">
+    <input type="button" value="引用" #*onclick="goToComment(this,$!blog.bId,1)"*# onclick="quote()">
+</div>
+<div class="fix top340">
+    <input type="button" id="support" value="赞一下"onclick="support($!blog.bId,1)">
+</div>
+
+<dd id="comment-template" class="comment hidden">
+    <div class="fl">
+        <p>
+            <i class="icon-envelope"></i>&nbsp;
+            <span class="red" id="userName"></span>
+            <span class="fs10" id="createTime"></span>
+        </p>
+        <p class="" id="content"></p>
+        <p class="fr comment-action">
+            <a id="supportCount" href="javascript:void(0)"></a>
+            <a id="commentCount" href="javascript:void(0)"></a>
+        </p>
+    </div>
+</dd>
+
+<div id="comment-body-template" class="comment-body hidden fl" style="height: 170px; width: 100%; padding-left:
+20px;">
+    <span>评论</span>
+    <br>
+    <textarea id="commentContent"  style="height: 60px; width: 550px;"></textarea>
+    <br>
+    <input type="button" value="评论" style="width: 100px; height: 30px; border: 1px solid #cccccc;"
+           onclick="comment(this,$!blog.bId,1,1)">
+</div>
+
+<script type="text/javascript">
+    getComments($!blog.bId);
+</script>
+
+

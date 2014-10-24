@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+  		margin:0 auto;
+  	}
+	
+	body{
+		text-shadow: 0 1px 1px white;
+		color: #626262;
+	}
+	
+	.siteline{
+		margin-top:20px; 
+		margin-left:70px;
+		height:50px;   
+		line-height:2em; 
+	}
+	
+	.passport_content{
+		background-color:#000000; 
+		width:800px;
+		margin:10px auto auto 150px;
+		height:400px;
+	}
+
+	.footer{
+		position:fixed;
+		right:275px; 
+		bottom:10px;
+		width:800px; 
+		height:45px; 		
+	}
+	
+	
+	#login_content{
+		width:300px; 
+		height:768px; 
+		position:fixed; 
+		right:0px; 
+		top:0px; 
+		background:#CCCCCC;
+		padding-top: 100px;
+		padding-left: 50px;
+	}
+
+	#regist_content{
+		margin: 100px auto;
+		border: 1px solid #cccccc;
+		padding-top: 20px;
+		width: 600px;
+	}

@@ -1,0 +1,48 @@
+
+<link rel="stylesheet" type="text/css" href="${resourceRoot}/misc/skin/passport.css" />
+<script type="text/javascript" src="${resourceRoot}/misc/js/passport/passport.js"></script>
+ 
+ #set($page_title="用户登陆")   .
+  <!-- 愿景 -->
+    <div class="siteline">
+           让能力创造价值！
+    </div>
+    
+    <!-- 介绍 -->
+    <div class="passport_content">
+    
+    </div>
+    
+    <!--  登陆  -->  
+    <div id="login_content">       
+        <form action="/passport/login" method="post" name="loginQueryForm">
+        <div class="control-group">
+            <div class="controls">
+                <div class="input-prepend">
+                <span class="add-on"><i class="icon-envelope"></i></span>
+                <input name="userName" class="input-medium" type="text" placeholder="请输入用户名">
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls">
+                <div class="input-prepend">
+                <span class="add-on"><i class="icon-pencil"></i></span>
+                <input name="userPwd" type="password" class="input-medium" placeholder="请输入密码">
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+          <label class="checkbox">
+            <input type="checkbox"> 记住我
+          </label>
+          <button type="submit" class="btn" id="regist-btn">登陆</button>
+        </div>
+      </div>
+	</form>
+    </div>
+    
+    <!--  footer  -->
+    <div class="footer">
+        <a>Copyright 2011 所有作品的版权归属于作者本人。如需转载或引用请务必征求作者本人的意见。</a>
+    </div>

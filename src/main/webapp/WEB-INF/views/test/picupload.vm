@@ -1,0 +1,37 @@
+
+<div id="maindiv" >
+	<form action="/ch/upload" method="post" name ="uploadExcel" id = "upload" enctype="multipart/form-data">
+				<div class="moadalCon" style="padding: 20px 30px 0 30px">
+					<table class="m-table" style=""><!-- 数据表格 -->
+						<tbody>
+							<tr>
+								<td align="left">
+									<input type="file" class="textField" name="file" id="excelfile" />	
+								</td>
+
+							</tr>
+							<tr>
+								<td align="left">
+									权限码：<input type="text" class="textField" name="privilige_code" id="upload_privilige_code"/>	
+								</td>
+
+							</tr>
+							<tr>
+								<td >
+									<input type = "submit" value = "上传"/>
+								</td>
+							</tr>
+							<tr>
+								<td >
+                                    <span><font color="red">ps：需要将要添加权限的popId放入excel文档的第一列</font></span>
+								</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modalFooter pb20">
+				</div>
+			</form>
+
+ </div>

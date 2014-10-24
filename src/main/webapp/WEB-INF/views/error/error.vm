@@ -1,0 +1,12 @@
+<style>
+	.error {
+		font-size:15px;
+		margin-top:50px;
+		height:150px;
+		color:red
+	}
+</style>
+
+    <div style="text-align:center">
+		aaaaaaaa
+    </div>
