@@ -1,6 +1,7 @@
-package com.xten.thread.syntools;
+package com.xten.thread.syntools.test;
 
 import com.xten.thread.common.CountTask;
+import com.xten.thread.syntools.TestHarness;
 
 /**
  * Created by kongqingyu on 15-3-15.
