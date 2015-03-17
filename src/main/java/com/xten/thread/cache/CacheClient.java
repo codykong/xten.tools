@@ -4,6 +4,7 @@ import org.bson.util.annotations.GuardedBy;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Created by xten on 15/3/16.
@@ -19,7 +20,7 @@ public class CacheClient implements Computable {
     }
 
     @Override
-    public synchronized String computer(int i) {
+    public synchronized String computer(int i) throws ExecutionException, InterruptedException {
 
         String result=cache.get(i);
         if(result==null){

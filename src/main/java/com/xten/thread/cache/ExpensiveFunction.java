@@ -20,7 +20,8 @@ public class ExpensiveFunction implements Computable {
     @Override
     public String computer(int i) {
         try {
-            Thread.sleep(100);
+            Thread.sleep(2000);
+            System.out.println("isComputer:"+i);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
