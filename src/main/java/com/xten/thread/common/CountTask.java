@@ -16,4 +16,10 @@ public class CountTask implements Runnable {
             }
         }
     }
+
+
+    public void longTimeRun(int i,long startTime) throws InterruptedException {
+        Thread.sleep(200);
+        System.out.println("query is:"+i+",take:"+(System.currentTimeMillis()-startTime));
+    }
 }
